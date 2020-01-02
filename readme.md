@@ -2,9 +2,11 @@
 
 Algorithms are fun. Here is a collection of sorting algorithms in JavaScript.
 
+Beware: lots of recursion afoot!
+
 ## Quicksort
 
-[./quicksort.js](JavaScript implementation)
+[JavaScript implementation](./quicksort.js)
 
 [Quicksort](https://en.wikipedia.org/wiki/Quicksort) is based on partitioning.
 
@@ -33,3 +35,32 @@ This is where the recursion comes in. We now also need to sort the sub-arrays on
 We do this using the same logic as before. [1, 2, 3] are already ordered and [6, 5] will be swapped around.
 
 The base case for the recursion is based on the length of the array to be left to check. An array of length 1 is by definition ordered, which makes it the end case.
+
+## Mergesort
+[JavaScript implementation](./mergesort.js)
+
+[Mergesort](https://en.wikipedia.org/wiki/Merge_sort) is a merging based sorting algorithm. It's main selling point is that it is "highly parallelisable", which is very handy in with Node (insert sarcasm flag). The implementation for it is pretty straightforward though.
+
+Let's start with the same array of integers that need sorting - [6, 4, 3, 1, 5].
+
+First we halve the array:
+
+[6, 4] [3, 1, 5]
+
+Then we halve the remaining arrays:
+
+[6] [4] [3] [1, 5]
+
+We keep going until we are left with only single item arrays:
+
+[6] [4] [3] [1] [5]
+
+An array of one item is intrinsically sorted so that's out starting point. Now we take two arrays at the time and merge them into one sorted array:
+
+[4, 6] [3] [1, 5]
+
+And we keep going until the array is sorted
+
+[4, 6] [1, 3, 5]
+
+1, 3, 4, 5, 6
