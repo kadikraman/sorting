@@ -2,11 +2,11 @@
 
 const input = [3, 100, 6, 7, 4, 6, 10, 7, 1, 2, 0];
 
-const result = mergesort(input);
+const result = mergeSort(input);
 
 console.log("RESULT ", result)
 
-function mergesort(array) {
+function mergeSort(array) {
 
   if (array.length <= 1) {
     return array;
@@ -17,7 +17,7 @@ function mergesort(array) {
   const left = array.slice(0, middleIndex);
   const right = array.slice(middleIndex);
 
-  return merge(mergesort(left), mergesort(right));
+  return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge(array1, array2) {

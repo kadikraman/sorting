@@ -2,7 +2,7 @@
 
 const input = [3, 100, 6, 7, 4, 6, 10, 7, 1, 2, 0];
 
-const result = quicksort(input, 0, input.length - 1);
+const result = quickSort(input, 0, input.length - 1);
 
 console.log("RESULT ", result)
 
@@ -12,15 +12,15 @@ function swap(array, index1, index2) {
   array[index2] = val1;
 }
 
-function quicksort(array, startIndex, endIndex) {
+function quickSort(array, startIndex, endIndex) {
   const index = partition(array, startIndex, endIndex);
 
   if (startIndex < index - 1) {
-    quicksort(array, startIndex, index - 1);
+    quickSort(array, startIndex, index - 1);
   }
 
   if (index < endIndex) {
-    quicksort(array, index, endIndex);
+    quickSort(array, index, endIndex);
   }
 
   return array;
