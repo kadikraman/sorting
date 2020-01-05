@@ -1,8 +1,7 @@
 # Sorting Algorithms in
 
-Algorithms are fun. Here is a collection of sorting algorithms in JavaScript.
+Implementing some of the more popular sorting algorithms in JavaScript.
 
-Beware: lots of recursion afoot!
 
 ## Quick Sort
 
@@ -36,7 +35,9 @@ We do this using the same logic as before. [1, 2, 3] are already ordered and [6,
 
 The base case for the recursion is based on the length of the array to be left to check. An array of length 1 is by definition ordered, which makes it the end case.
 
+
 ## Merge Sort
+
 [JavaScript implementation](./mergesort.js)
 
 [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) is a merging based sorting algorithm. It's main selling point is that it is "highly parallelisable", which is very handy in with Node (insert sarcasm flag). The implementation for it is pretty straightforward though.
@@ -65,10 +66,12 @@ And we keep going until the array is sorted
 
 1, 3, 4, 5, 6
 
+
 ## Bubble Sort
+
 [JavaScript implementation](./bubbleSort.js)
 
-[Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) is one of the simplest (but not very efficient) sorting algorithms out there. The basic idea is that we step through the list comparing two elements at the time and swapping them if need be. After each iteration, we'll need to compare one fewer element. It's called bubble sort, because the bigger numbers "bubble" to the top of the list.
+[Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) is one of the most straightforward (but not very efficient) sorting algorithms out there. The basic idea is that we step through the list comparing two elements at the time and swapping them if need be. After each iteration, we'll need to compare one fewer element. It's called bubble sort, because the bigger numbers "bubble" to the top of the list.
 
 Let's start with [6, 4, 3, 1, 5].
 
@@ -101,3 +104,40 @@ We now end up with the last element in it's final position, so in the next itera
 [1, __3__, __4__, 5, 6] (3rd iteration done, no need to check 4, 5 or 6 anymore)
 
 [__1__, __3__, 4, 5, 6] (final iteration done - sorted!)
+
+
+## Insertion Sort
+
+[JavaScript implementation](./insertionSort.js)
+
+[Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort) is another sorting algorithm that's not too hard to grasp, but inefficient on large lists.
+
+Its basic idea is that we build the list one element at the time.
+
+Once again, let's start with [6, 4, 3, 1, 5].
+
+We go through the list one element at a time and insert it in the correct position in the new list:
+
+[6] (1st element placed)
+
+[6, __4__]
+
+[__4__, 6] (2nd element placed)
+
+[4, 6, __3__]
+
+[4, __3__, 6]
+
+[__3__, 4, 6] (3rd element placed)
+
+[3, 4, 6, __1__]
+
+[3, 4, __1__, 6]
+
+[3, __1__, 4, 6]
+
+[__1__, 3, 4, 6] (4th element placed)
+
+[1, 3, 4, 6, __5__]
+
+[1, 3, 4, __5__, 6] (5th element placed - sorted!)
