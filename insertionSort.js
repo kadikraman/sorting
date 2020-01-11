@@ -1,12 +1,6 @@
 // https://repl.it/repls/GoodGrandioseDevelopments
 
-const input = [3, 100, 6, 7, 4, 6, 10, 7, 1, 2, 0];
-
-const result = insertionSort(input);
-
-console.log("RESULT ", result)
-
-function insertionSort(array) {
+export function insertionSort(array) {
   let result = [];
 
   array.forEach(item => {

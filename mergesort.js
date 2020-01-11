@@ -1,12 +1,6 @@
 // https://repl.it/repls/UnluckyFluffyDownloads
 
-const input = [3, 100, 6, 7, 4, 6, 10, 7, 1, 2, 0];
-
-const result = mergeSort(input);
-
-console.log("RESULT ", result)
-
-function mergeSort(array) {
+export function mergeSort(array) {
 
   if (array.length <= 1) {
     return array;

@@ -1,12 +1,6 @@
 // https://repl.it/repls/YellowishConventionalHypotenuse
 
-const input = [3, 100, 6, 7, 4, 6, 10, 7, 1, 2, 0];
-
-const result = bubbbleSort(input);
-
-console.log("RESULT ", result)
-
-function bubbbleSort(array) {
+export function bubbbleSort(array) {
   let times = 0;
 
   while(times < input.length - 1) {
