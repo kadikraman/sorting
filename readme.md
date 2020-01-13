@@ -15,19 +15,19 @@ First, we choose a __pivot__, ideally the number at the middle which in this cas
 
 Next, we start from either end of the array and compare the numbers on either side to the pivot and order them to be on the correct side of the central value.
 
-[__6__, 4, 3, 1, __5__]
+> [__6__, 4, 3, 1, __5__]
 
 Above, 6 is larger than 3 so it needs to be on the right, but 5 is already on the correct side of 3, so we skip that and move inwards.
 
-[__6__, 4, 3, __1__, 5]
+> [__6__, 4, 3, __1__, 5]
 
 Here, 6 needs to be on the right and 1 needs to be on the left, so we swap them and move both sides along.
 
-[1, __4__, __3__, 6, 5]
+> [1, __4__, __3__, 6, 5]
 
 Here, we can see that 4 and 3 need to be swapped so we do that and are done.
 
-[1, 3, 4, 6, 5]
+> [1, 3, 4, 6, 5]
 
 This is where the recursion comes in. We now also need to sort the sub-arrays on either side of the pivot, namely [1, 3, 4] and [6, 5].
 
@@ -46,25 +46,25 @@ Let's start with the same array of integers that need sorting - [6, 4, 3, 1, 5].
 
 First we halve the array:
 
-[6, 4] [3, 1, 5]
+> [6, 4] [3, 1, 5]
 
 Then we halve the remaining arrays:
 
-[6] [4] [3] [1, 5]
+> [6] [4] [3] [1, 5]
 
 We keep going until we are left with only single item arrays:
 
-[6] [4] [3] [1] [5]
+> [6] [4] [3] [1] [5]
 
 An array of one item is intrinsically sorted so that's out starting point. Now we take two arrays at the time and merge them into one sorted array:
 
-[4, 6] [3] [1, 5]
+> [4, 6] [3] [1, 5]
 
 And we keep going until the array is sorted
 
-[4, 6] [1, 3, 5]
+> [4, 6] [1, 3, 5]
 
-1, 3, 4, 5, 6
+> 1, 3, 4, 5, 6
 
 
 ## Bubble Sort
@@ -77,33 +77,33 @@ Let's start with [6, 4, 3, 1, 5].
 
 We compare the two first elements:
 
-[__6__, __4__, 3, 1, 5]
+> [__6__, __4__, 3, 1, 5]
 
 6 > 4 so we swap them and compare the next two:
 
-[4, __6__, __3__, 1, 5]
+> [4, __6__, __3__, 1, 5]
 
 6 > 3 so we repeat:
 
-[4, 3, __6__, __1__, 5]
+> [4, 3, __6__, __1__, 5]
 
-[4, 3, 1, __6__, __5__]
+> [4, 3, 1, __6__, __5__]
 
-[4, 3, 1, 5, 6]
+> [4, 3, 1, 5, 6]
 
 We now end up with the last element in it's final position, so in the next iteration we won't need to compare the last element anymore:
 
-[__4__, __3__, 1, 5, 6]
+> [__4__, __3__, 1, 5, 6]
 
-[3, __4__, __1__, 5, 6]
+> [3, __4__, __1__, 5, 6]
 
-[3, 1, __4__, __5__, 6] (2nd iteration done, no need to check 5 or 6 anymore)
+> [3, 1, __4__, __5__, 6] (2nd iteration done, no need to check 5 or 6 anymore)
 
-[__3__, __1__, 4, 5, 6]
+> [__3__, __1__, 4, 5, 6]
 
-[1, __3__, __4__, 5, 6] (3rd iteration done, no need to check 4, 5 or 6 anymore)
+> [1, __3__, __4__, 5, 6] (3rd iteration done, no need to check 4, 5 or 6 anymore)
 
-[__1__, __3__, 4, 5, 6] (final iteration done - sorted!)
+> [__1__, __3__, 4, 5, 6] (final iteration done - sorted!)
 
 
 ## Insertion Sort
@@ -120,24 +120,24 @@ We go through the list one element at a time and insert it in the correct positi
 
 [6] (1st element placed)
 
-[6, __4__]
+> [6, __4__]
 
-[__4__, 6] (2nd element placed)
+> [__4__, 6] (2nd element placed)
 
-[4, 6, __3__]
+> [4, 6, __3__]
 
-[4, __3__, 6]
+> [4, __3__, 6]
 
-[__3__, 4, 6] (3rd element placed)
+> [__3__, 4, 6] (3rd element placed)
 
-[3, 4, 6, __1__]
+> [3, 4, 6, __1__]
 
-[3, 4, __1__, 6]
+> [3, 4, __1__, 6]
 
-[3, __1__, 4, 6]
+> [3, __1__, 4, 6]
 
-[__1__, 3, 4, 6] (4th element placed)
+> [__1__, 3, 4, 6] (4th element placed)
 
-[1, 3, 4, 6, __5__]
+> [1, 3, 4, 6, __5__]
 
-[1, 3, 4, __5__, 6] (5th element placed - sorted!)
+> [1, 3, 4, __5__, 6] (5th element placed - sorted!)
